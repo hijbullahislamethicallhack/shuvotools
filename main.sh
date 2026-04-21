@@ -16,8 +16,8 @@ echo -e "${blue}====================================${clear}"
 read -p "Select an option: " choice
 
 case $choice in
-   1)
-        cd "phishing tools" && ./main.sh
+  1)
+        cd "phishing tools" && bash main.sh
         ;;
     2)
         # Jehetu shuvo.py bairei ache, tai cd korar dorkar nei
