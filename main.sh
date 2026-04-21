@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Function to handle the return to menu
-back_to_menu() {
-    echo -e "\nPress [Enter] to go back..."
-    read
+# Function to pause
+pause(){
+  read -p "Press [Enter] key to continue..." fakedata
 }
 
 while true
@@ -22,20 +21,19 @@ do
     case $choice in
         1)
             echo "Opening Phishing Tools..."
-            # Entering the sub-folder
-            if [ -d "phishing tools" ]; then
-                cd "phishing tools"
-                # Running the new main.sh you created inside the folder
+            # Updated to match your 'phishing_tools' folder
+            if [ -d "phishing_tools" ]; then
+                cd "phishing_tools"
                 if [ -f "main.sh" ]; then
                     bash main.sh
                 else
-                    echo "Error: main.sh not found inside 'phishing tools' folder!"
+                    echo "Error: main.sh not found inside phishing_tools!"
                 fi
-                cd .. # Returning to the main directory
+                cd ..
             else
-                echo "Error: 'phishing tools' folder not found!"
+                echo "Error: Directory 'phishing_tools' not found!"
             fi
-            back_to_menu
+            pause
             ;;
         2)
             echo "Starting SMS Bomber..."
@@ -44,15 +42,14 @@ do
             else
                 echo "Error: shuvo.py not found!"
             fi
-            back_to_menu
+            pause
             ;;
         3)
-            echo "Exiting... Bye Shuvo!"
             exit 0
             ;;
         *)
-            echo "Invalid option! Try again."
-            sleep 2
+            echo "Invalid choice!"
+            sleep 1
             ;;
     esac
 done
