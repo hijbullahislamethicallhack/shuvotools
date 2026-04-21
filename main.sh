@@ -17,11 +17,12 @@ read -p "Select an option: " choice
 
 case $choice in
     1)
-        cd phishing_tools && php -S localhost:8080
+        # Folder-er name-e space thakle quotation ("") dite hoy
+        cd "phishing tools" && php -S localhost:8080
         ;;
     2)
-        # Apnar bomber file-er naam jodi bomber.py hoy
-        cd sms_bomber && python3 bomber.py
+        # Jehetu shuvo.py bairei ache, tai cd korar dorkar nei
+        python3 shuvo.py
         ;;
     3)
         exit
